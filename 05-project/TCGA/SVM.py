@@ -38,10 +38,10 @@ relevant_genes = ["PIK3CA", "RUNX1", "CDH1", "TP53", "TBX3", "PTEN", "FOXA1", "M
                   "RPGR", "CCNI", "ARID1A", "CD3EAP", "ADAMTS6", "OR2D2", "TMEM199", "MST1", "RHBG", "ZFP36L1", 
                   "TCP11", "CASZ1", "GAL3ST1", "FRMPD2", "GPS2", "ZNF362", "BRCA1", "BRCA2", "PGR", "ESR1"]
 
-genes = pd.read_csv("../TCGA/dataset.csv")
+genes = pd.read_csv("dataset.csv")
 genes = genes.rename(columns={"Unnamed: 0": "Patient_ID"})
 
-patient_info = pd.read_csv("../TCGA/outcome.csv")
+patient_info = pd.read_csv("outcome.csv")
 patient_info = patient_info.rename(columns={"Unnamed: 0": "Patient_ID"})
 
 missing_subtype_patients = patient_info[patient_info["BRCA_subtype"].isnull()]["Patient_ID"]
